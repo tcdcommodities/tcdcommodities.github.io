@@ -1,1 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Membership | TCD Commodities</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
+<body>
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Logo" />
+        <span>TCD Commodities</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="membership.html" aria-current="page">Membership</a>
+        <a href="events.html">Events</a>
+        <a class="nav-cta" href="contact.html">Contact Us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <h2 class="h2 reveal">Membership</h2>
+    <p class="muted reveal">
+      Fill out the form below to join. (You can also include membership fee info here if needed.)
+    </p>
+
+    <!-- STEP: Replace the iframe src with your Google Form embed link -->
+    <div class="reveal" style="border-radius: 18px; overflow:hidden; box-shadow: var(--shadow); border:1px solid #eee;">
+      <iframe
+        src="PASTE_YOUR_GOOGLE_FORM_EMBED_LINK_HERE"
+        width="100%"
+        height="900"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Membership form"
+      >
+        Loading…
+      </iframe>
+    </div>
+
+    <p class="muted reveal" style="margin-top:16px;">
+      If the embed doesn’t load, open the form in a new tab:
+      <a href="PASTE_YOUR_PUBLIC_FORM_LINK_HERE" target="_blank" rel="noreferrer">Open Google Form</a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <img src="assets/logo.png" alt="Logo">
+    <p>© Trinity College Dublin Commodities Society</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

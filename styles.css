@@ -88,13 +88,6 @@ header{
   background-position: center;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(22,54,93,.75);
-}
-
 .hero-inner{
   position:relative;
   color: var(--white);

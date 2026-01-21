@@ -17,6 +17,15 @@ body{
   background: var(--white);
   color: #0f1b2a;
   line-height: 1.6;
+  h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+  p {
+  font-weight: 400;
+}
+.nav-links a {
+  font-weight: 500;
 }
 
 a{ color: inherit; }

@@ -3,134 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trinity College Dublin Commodities</title>
+  <title>Trinity College Dublin Commodities Society</title>
   <meta name="description" content="Trinity College Dublin Commodities Society" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Inter font (Oxford-ish) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="Trinity College Dublin Commodities Society logo" />
+          <span>Trinity College Dublin Commodities Society</span>
+        </a>
 
-<header>
-  <div class="container">
-    <nav class="nav">
-      <a class="brand" href="index.html">
-        <img src="assets/logo.png" alt="Logo">
-        <span>Trinity College Dublin Commodities Society</span>
-      </a>
+        <div class="nav-links">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="membership.html">Membership</a>
+          <a href="events.html">Events</a>
+          <a class="nav-cta" href="contact.html">Contact Us</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-      <div class="nav-links">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="membership.html">Membership</a>
-        <a href="events.html">Events</a>
-        <a class="nav-cta" href="contact.html">Contact Us</a>
+  <main class="site-main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner reveal">
+        <h1>Trinity College Dublin Commodities Society</h1>
+        <p>Hands-on exposure to metals, energy, and agriculture through talks, panels, and industry networking.</p>
+        <a class="button" href="membership.html">Join Us</a>
       </div>
-    </nav>
-  </div>
-</header>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-inner reveal">
-    <h1>Trinity College Dublin Commodities Society</h1>
-    <a class="button" href="membership.html">Join Us</a>
-  </div>
-</section>
+    <!-- ABOUT (Poster Layout) -->
+    <section class="about-poster">
+      <div class="container about-top">
+        <h2 class="about-title reveal">About Us...</h2>
+      </div>
 
-<!-- ABOUT (Poster Layout) -->
-<section class="about-poster">
-  <div class="container" style="padding: 60px 0 0 0;">
-    <h2 class="about-title reveal">About Us...</h2>
-  </div>
+      <div class="container about-grid">
+        <!-- Left: grey curve + logo circle -->
+        <div class="about-left reveal">
+          <div class="logo-ring">
+            <div class="logo-ring-inner">
+              <img src="assets/logo.png" alt="Logo" />
+            </div>
+          </div>
+        </div>
 
-  <div class="container about-grid">
-    <!-- Left: grey curves + logo -->
-    <div class="about-left reveal">
-      <div class="logo-ring">
-        <div class="logo-ring-inner">
-          <img src="assets/logo.png" alt="Logo">
+        <!-- Right: mission & vision -->
+        <div class="about-right">
+          <div class="reveal">
+            <h3>Our Mission</h3>
+            <p>
+              Our mission is to bring the students of Trinity hands-on exposure to the world of commodities;
+              specifically, metals, energy, and agriculture.
+            </p>
+          </div>
+
+          <div class="reveal">
+            <h3>Our Vision</h3>
+            <p>
+              We are looking to bridge the gap between academic learning and real world industry insight within the
+              global commodities space.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Right: mission + vision -->
-    <div class="about-right">
-      <div class="reveal">
-        <h3>Our Mission</h3>
-        <p>
-          Our mission is to bring the students of Trinity hands-on exposure to the world of commodities;
-          specifically, metals, energy, and agriculture.
+    <!-- COMMITTEE -->
+    <section class="section">
+      <div class="container">
+        <h2 class="h2 reveal">Executive Committee</h2>
+        <p class="muted reveal">Update names, roles, bios, and headshots when ready.</p>
+
+        <div class="cards">
+          <article class="card reveal">
+            <img src="assets/committee/president.jpg" alt="President headshot">
+            <div class="card-body">
+              <h4>Full Name</h4>
+              <p class="role">President</p>
+              <p class="bio">Short 1–2 line bio (degree, interests, focus).</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <img src="assets/committee/treasurer.jpg" alt="Treasurer headshot">
+            <div class="card-body">
+              <h4>Full Name</h4>
+              <p class="role">Treasurer</p>
+              <p class="bio">Short 1–2 line bio.</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <img src="assets/committee/events.jpg" alt="Events Officer headshot">
+            <div class="card-body">
+              <h4>Full Name</h4>
+              <p class="role">Events Officer</p>
+              <p class="bio">Short 1–2 line bio.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section alt">
+      <div class="container reveal">
+        <h2 class="h2">Membership</h2>
+        <p class="muted">
+          Become a member to get access to speaker events, networking, career resources, and society updates.
         </p>
+        <a class="button" href="membership.html">View Membership</a>
       </div>
+    </section>
+  </main>
 
-      <div class="reveal">
-        <h3>Our Vision</h3>
-        <p>
-          We are looking to bridge the gap between academic learning and real world industry insight within the
-          global commodities space.
-        </p>
-      </div>
+  <footer>
+    <div class="container footer-inner">
+      <img src="assets/logo.png" alt="Logo">
+      <p>© Trinity College Dublin Commodities Society</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- COMMITTEE -->
-<section class="section">
-  <div class="container">
-    <h2 class="h2 reveal">Executive Committee</h2>
-    <p class="muted reveal">Meet the minds driving the mission forward.</p>
-
-    <div class="cards">
-      <article class="card reveal">
-        <img src="assets/committee/president.jpg" alt="President headshot">
-        <div class="card-body">
-          <h4>Tadhg Galvin</h4>
-          <p class="role">President</p>
-          <p class="bio">Short 1–2 line bio (degree, interests, what they do).</p>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <img src="assets/committee/treasurer.jpg" alt="Treasurer headshot">
-        <div class="card-body">
-          <h4>Micheál Colwell</h4>
-          <p class="role">Vice-President</p>
-          <p class="bio">Short 1–2 line bio.</p>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <img src="assets/committee/events.jpg" alt="Events Officer headshot">
-        <div class="card-body">
-          <h4>Tom McCarroll</h4>
-          <p class="role">Vice-President</p>
-          <p class="bio">Short 1–2 line bio.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- MEMBERSHIP CTA -->
-<section class="section alt">
-  <div class="container reveal">
-    <h2 class="h2">Membership</h2>
-    <p class="muted">
-      Become a member to get access to speaker events, networking, career resources, and society updates.
-    </p>
-    <a class="button" href="membership.html">Go to Membership</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-inner">
-    <img src="assets/logo.png" alt="Logo">
-    <p>© Trinity College Dublin Commodities Society</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

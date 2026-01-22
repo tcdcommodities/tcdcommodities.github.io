@@ -1,37 +1,8 @@
-/* =========================================================
-   GLOBAL RESET + STICKY FOOTER (REMOVES WHITE BORDER)
-   ========================================================= */
-
-html, body{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #ffffff;
-  color: #0f1b2a;
-  line-height: 1.6;
-}
-
-.site-main{
-  flex: 1;
-}
-
-/* =========================================================
-   VARIABLES
-   ========================================================= */
-
 :root{
   --navy:#16365D;
   --white:#ffffff;
   --light-grey:#f6f7f9;
-  --text-grey:#5b6778;
+  --text-grey:#BFC7D1;
 
   --max:1100px;
   --pad:22px;
@@ -39,19 +10,44 @@ body{
   --shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* =========================================================
-   CONTAINERS
-   ========================================================= */
-
-.container{
-  width: min(var(--max), calc(100% - 2*var(--pad)));
-  margin: 0 auto;
+/* =========================
+   RESET + NO WHITE BORDER
+   ========================= */
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* =========================================================
-   HEADER / NAV (MATCHES ABOUT US NAVY)
-   ========================================================= */
+*{ box-sizing: border-box; }
 
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--white);
+  color: #0f1b2a;
+  line-height: 1.6;
+}
+
+.site-main{ flex: 1; }
+
+a{ color: inherit; }
+
+/* =========================
+   CONTAINER (centering fix)
+   ========================= */
+.container{
+  width: min(var(--max), calc(100% - (2 * var(--pad))));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   HEADER / NAV (solid navy)
+   ========================= */
 header{
   position: sticky;
   top: 0;
@@ -72,14 +68,11 @@ header{
   align-items:center;
   gap: 12px;
   text-decoration:none;
-  color: #ffffff;
+  color: var(--white);
   font-weight: 800;
 }
 
-.brand img{
-  height: 42px;
-  width:auto;
-}
+.brand img{ height: 42px; width:auto; }
 
 .brand span{
   font-size: 14px;
@@ -91,18 +84,19 @@ header{
   display:flex;
   align-items:center;
   gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-links a{
   text-decoration:none;
-  color: #ffffff;
+  color: var(--white);
   font-size: 14px;
   font-weight: 500;
+  opacity: .95;
 }
 
-.nav-links a:hover{
-  text-decoration: underline;
-}
+.nav-links a:hover{ text-decoration: underline; }
 
 .nav-cta{
   border: 1px solid rgba(255,255,255,.35);
@@ -110,10 +104,9 @@ header{
   border-radius: 999px;
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
-
+/* =========================
+   HERO (NO overlay tint)
+   ========================= */
 .hero{
   position: relative;
   min-height: 62vh;
@@ -125,8 +118,8 @@ header{
 }
 
 .hero-inner{
-  color: #ffffff;
   padding: 70px 0;
+  color: var(--white);
 }
 
 .hero h1{
@@ -135,18 +128,22 @@ header{
   margin: 0 0 18px 0;
   max-width: 22ch;
   font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .hero p{
-  color: #ffffff;
+  color: #ffffff;              /* <-- fully white as requested */
   max-width: 60ch;
   margin: 0 0 24px 0;
 }
 
+/* =========================
+   BUTTONS
+   ========================= */
 .button{
   display:inline-block;
   text-decoration:none;
-  background: #ffffff;
+  background: var(--white);
   color: var(--navy);
   padding: 12px 16px;
   border-radius: 10px;
@@ -156,22 +153,17 @@ header{
 .button:hover{ opacity:.92; }
 
 .button-secondary{
-  background:#ffffff;
-  color:var(--navy);
-  border:1px solid #dfe6ef;
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid #dfe6ef;
 }
 
-/* =========================================================
+/* =========================
    SECTIONS
-   ========================================================= */
+   ========================= */
+.section{ padding: 70px 0; }
 
-.section{
-  padding: 70px 0;
-}
-
-.section.alt{
-  background: var(--light-grey);
-}
+.section.alt{ background: var(--light-grey); }
 
 .h2{
   font-size: 30px;
@@ -181,18 +173,19 @@ header{
   letter-spacing: -0.02em;
 }
 
-.muted{
-  color: #3b4757;
-}
+.muted{ color:#3b4757; }
 
-/* =========================================================
-   ABOUT US (POSTER LAYOUT)
-   ========================================================= */
-
+/* =========================
+   ABOUT (Poster Layout)
+   ========================= */
 .about-poster{
   background: var(--navy);
-  color: #ffffff;
+  color: var(--white);
   overflow: hidden;
+}
+
+.about-top{
+  padding-top: 60px;
 }
 
 .about-title{
@@ -206,13 +199,16 @@ header{
   display:grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 44px;
+  align-items: start;
   padding: 40px 0 70px 0;
 }
 
 @media (max-width: 900px){
-  .about-grid{ grid-template-columns: 1fr; }
+  .about-grid{ grid-template-columns: 1fr; gap: 26px; }
+  .brand span{ white-space: normal; }
 }
 
+/* Left: grey curve + logo circle */
 .about-left{
   position: relative;
   min-height: 420px;
@@ -236,7 +232,7 @@ header{
   width: min(360px, 80vw);
   aspect-ratio: 1 / 1;
   border-radius: 999px;
-  background: #ffffff;
+  background: var(--white);
   display:grid;
   place-items:center;
   box-shadow: var(--shadow);
@@ -249,13 +245,18 @@ header{
   background: var(--navy);
   display:grid;
   place-items:center;
-  border: 6px solid #ffffff;
+  border: 6px solid rgba(255,255,255,.95);
+  overflow:hidden;
 }
 
 .logo-ring-inner img{
   width: 78%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.15));
 }
 
+/* Right text */
 .about-right h3{
   font-size: clamp(32px, 3.5vw, 50px);
   margin: 0 0 10px 0;
@@ -264,184 +265,66 @@ header{
 
 .about-right p{
   margin: 0 0 34px 0;
+  color: rgba(255,255,255,.82);
   font-size: 20px;
-  color: rgba(255,255,255,.85);
+  max-width: 44ch;
 }
 
-/* =========================================================
+/* =========================
    COMMITTEE CARDS
-   ========================================================= */
-
+   ========================= */
 .cards{
   display:grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
 @media (max-width: 900px){
-  .cards{ grid-template-columns: repeat(2,1fr); }
+  .cards{ grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 600px){
   .cards{ grid-template-columns: 1fr; }
 }
 
 .card{
-  background:#ffffff;
   border-radius: var(--radius);
-  overflow:hidden;
+  background: var(--white);
   box-shadow: var(--shadow);
-  border:1px solid #eee;
+  overflow:hidden;
+  border: 1px solid #eee;
 }
 
 .card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display:block;
 }
 
-.card-body{
-  padding:16px;
-}
+.card-body{ padding: 16px; }
 
 .card h4{
   margin:0 0 6px 0;
   font-size:18px;
-  color:var(--navy);
+  color: var(--navy);
 }
 
 .card .role{
   margin:0 0 10px 0;
+  color:#506075;
   font-weight:700;
   font-size:14px;
-  color:#506075;
 }
 
 .card .bio{
-  font-size:14px;
+  margin:0;
   color:#2e3a49;
+  font-size:14px;
 }
 
-/* =========================================================
-   EVENTS TIMELINE
-   ========================================================= */
-
-.timeline{
-  position:relative;
-  padding-left:22px;
-}
-
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:7px;
-  top:0;
-  bottom:0;
-  width:2px;
-  background:#d7dde5;
-}
-
-.t-item{
-  position:relative;
-  margin-bottom:18px;
-  padding:14px;
-  background:#ffffff;
-  border-radius:14px;
-  border:1px solid #eee;
-  box-shadow: var(--shadow);
-}
-
-.t-item::before{
-  content:"";
-  position:absolute;
-  left:-22px;
-  top:18px;
-  width:14px;
-  height:14px;
-  border-radius:999px;
-  background:var(--navy);
-  border:3px solid #ffffff;
-}
-
-.t-date{
-  font-weight:900;
-  color:var(--navy);
-}
-
-.t-title{
-  font-weight:800;
-}
-
-.t-desc{
-  color:#344255;
-}
-
-/* =========================================================
-   COMING SOON CARDS
-   ========================================================= */
-
-.soon-card{
-  max-width:760px;
-  margin:0 auto;
-  padding:28px;
-  background:#ffffff;
-  border-radius:18px;
-  border:1px solid #eee;
-  box-shadow: var(--shadow);
-}
-
-.soon-kicker{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--navy);
-}
-
-.soon-title{
-  font-size:clamp(34px,4vw,44px);
-  margin:0 0 10px 0;
-  font-weight:900;
-  color:var(--navy);
-}
-
-.soon-text{
-  color:#3b4757;
-  margin-bottom:18px;
-}
-
-.soon-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.soon-note{
-  font-size:13px;
-  color:#5b6778;
-}
-
-/* =========================================================
-   CONTACT FORM
-   ========================================================= */
-
-.contact-wrap{
-  max-width:720px;
-  margin:0 auto;
-}
-
-.contact-form{
-  background:#ffffff;
-  border-radius:18px;
-  padding:22px;
-  border:1px solid #eee;
-  box-shadow: var(--shadow);
-}
-
-/* =========================================================
+/* =========================
    FOOTER
-   ========================================================= */
-
+   ========================= */
 footer{
   background: var(--navy);
   color: var(--text-grey);
@@ -452,25 +335,26 @@ footer{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
-  flex-wrap:wrap;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .footer-inner img{
-  height:36px;
+  height: 36px;
+  width: auto;
 }
 
-/* =========================================================
+/* =========================
    FADE-IN ANIMATIONS
-   ========================================================= */
-
+   ========================= */
 .reveal{
-  opacity:0;
-  transform:translateY(18px);
-  transition:opacity .65s ease, transform .65s ease;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .65s ease, transform .65s ease;
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible{
-  opacity:1;
-  transform:none;
+  opacity: 1;
+  transform: translateY(0);
 }

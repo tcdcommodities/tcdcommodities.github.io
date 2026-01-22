@@ -40,8 +40,7 @@ header{
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(22,54,93,.92);
-  backdrop-filter: blur(10px);
+  background: var(--navy); /* EXACT same as About Us */
 }
 
 .nav{

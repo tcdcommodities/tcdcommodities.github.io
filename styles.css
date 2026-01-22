@@ -548,3 +548,12 @@ footer{
     font-size: 14px;
   }
 }
+.soon-card{
+  max-width:760px;
+  margin:0 auto;
+  padding:28px;
+  background:#ffffff;
+  border-radius:18px;
+  border:1px solid #eee;
+  box-shadow: var(--shadow);
+}

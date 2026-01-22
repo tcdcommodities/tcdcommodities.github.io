@@ -451,3 +451,100 @@ footer{
 }
 
 .honeypot{ display:none; }
+
+@media (max-width: 768px){
+  .nav{
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .brand{
+    flex: 1 1 100%;
+  }
+
+  .brand span{
+    white-space: normal;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .nav-links{
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    gap: 14px;
+  }
+}
+@media (max-width: 768px){
+  .hero{
+    min-height: 52vh;
+  }
+
+  .hero-inner{
+    padding: 56px 0;
+  }
+
+  .hero h1{
+    font-size: 32px;
+    max-width: 100%;
+  }
+
+  .hero p{
+    font-size: 15px;
+  }
+}
+@media (max-width: 900px){
+  .about-grid{
+    padding: 24px 0 56px 0;
+  }
+
+  .about-left{
+    min-height: 300px;
+  }
+
+  .logo-ring{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+
+  .about-right h3{
+    font-size: 28px;
+  }
+
+  .about-right p{
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px){
+  .section{
+    padding: 48px 0;
+  }
+
+  .card img{
+    height: 180px;
+  }
+
+  .card-body{
+    padding: 14px;
+  }
+}
+@media (max-width: 600px){
+  .soon-card{
+    padding: 20px;
+  }
+
+  .soon-title{
+    font-size: 30px;
+  }
+}
+@media (max-width: 600px){
+  .contact-form{
+    padding: 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea{
+    font-size: 14px;
+  }
+}

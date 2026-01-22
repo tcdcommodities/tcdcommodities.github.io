@@ -1,16 +1,7 @@
-:root{
-  --navy:#16365D;
-  --white:#FFFFFF;
-  --light-grey:#E6E6E6;
-  --text-grey:#BFC7D1;
+/* =========================================================
+   GLOBAL RESET + STICKY FOOTER (REMOVES WHITE BORDER)
+   ========================================================= */
 
-  --max: 1100px;
-  --pad: 22px;
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-*{ box-sizing:border-box; }
 html, body{
   height: 100%;
   margin: 0;
@@ -23,7 +14,7 @@ body{
   flex-direction: column;
 
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--white);
+  background: #ffffff;
   color: #0f1b2a;
   line-height: 1.6;
 }
@@ -31,29 +22,41 @@ body{
 .site-main{
   flex: 1;
 }
-  h1, h2, h3 {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-  p {
-  font-weight: 400;
-}
-.nav-links a {
-  font-weight: 500;
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root{
+  --navy:#16365D;
+  --white:#ffffff;
+  --light-grey:#f6f7f9;
+  --text-grey:#5b6778;
+
+  --max:1100px;
+  --pad:22px;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-a{ color: inherit; }
+/* =========================================================
+   CONTAINERS
+   ========================================================= */
 
 .container{
   width: min(var(--max), calc(100% - 2*var(--pad)));
+  margin: 0 auto;
 }
 
-/* ---------------- NAV ---------------- */
+/* =========================================================
+   HEADER / NAV (MATCHES ABOUT US NAVY)
+   ========================================================= */
+
 header{
   position: sticky;
   top: 0;
   z-index: 20;
-  background: var(--navy); /* EXACT same as About Us */
+  background: var(--navy);
 }
 
 .nav{
@@ -69,28 +72,37 @@ header{
   align-items:center;
   gap: 12px;
   text-decoration:none;
-  color: var(--white);
+  color: #ffffff;
   font-weight: 800;
-  letter-spacing: .2px;
 }
 
-.brand img{ height: 42px; width:auto; }
+.brand img{
+  height: 42px;
+  width:auto;
+}
+
+.brand span{
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
 
 .nav-links{
   display:flex;
   align-items:center;
   gap: 18px;
-  flex-wrap: wrap;
-  justify-content:flex-end;
 }
 
 .nav-links a{
   text-decoration:none;
-  color: var(--white);
+  color: #ffffff;
   font-size: 14px;
-  opacity: .95;
+  font-weight: 500;
 }
-.nav-links a:hover{ text-decoration: underline; }
+
+.nav-links a:hover{
+  text-decoration: underline;
+}
 
 .nav-cta{
   border: 1px solid rgba(255,255,255,.35);
@@ -98,7 +110,10 @@ header{
   border-radius: 999px;
 }
 
-/* ---------------- HERO ---------------- */
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero{
   position: relative;
   min-height: 62vh;
@@ -110,56 +125,80 @@ header{
 }
 
 .hero-inner{
-  position:relative;
-  color: var(--white);
+  color: #ffffff;
   padding: 70px 0;
 }
 
 .hero h1{
   font-size: clamp(32px, 4.2vw, 52px);
   line-height: 1.05;
+  margin: 0 0 18px 0;
   max-width: 22ch;
+  font-weight: 900;
 }
 
 .hero p{
   color: #ffffff;
+  max-width: 60ch;
+  margin: 0 0 24px 0;
 }
 
 .button{
   display:inline-block;
   text-decoration:none;
-  background: var(--white);
+  background: #ffffff;
   color: var(--navy);
   padding: 12px 16px;
   border-radius: 10px;
   font-weight: 800;
 }
+
 .button:hover{ opacity:.92; }
 
-/* ---------------- SECTIONS ---------------- */
-.section{ padding: 70px 0; }
-.section.alt{ background: #f7f7f7; }
+.button-secondary{
+  background:#ffffff;
+  color:var(--navy);
+  border:1px solid #dfe6ef;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section{
+  padding: 70px 0;
+}
+
+.section.alt{
+  background: var(--light-grey);
+}
 
 .h2{
   font-size: 30px;
+  margin: 0 0 14px 0;
   color: var(--navy);
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
-.muted{ color:#3b4757; }
+.muted{
+  color: #3b4757;
+}
 
-/* ---------------- ABOUT (Poster Layout) ---------------- */
-/* This recreates the “About Us…” big title, logo-on-left, mission/vision on right */
+/* =========================================================
+   ABOUT US (POSTER LAYOUT)
+   ========================================================= */
+
 .about-poster{
   background: var(--navy);
-  color: var(--white);
-  position: relative;
-  overflow:hidden;
+  color: #ffffff;
+  overflow: hidden;
 }
 
 .about-title{
   font-size: clamp(44px, 6vw, 86px);
   font-weight: 900;
-  margin: 0 0 10px 0;
+  margin: 0;
   letter-spacing: -0.02em;
 }
 
@@ -167,15 +206,13 @@ header{
   display:grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 44px;
-  align-items: start;
   padding: 40px 0 70px 0;
 }
 
 @media (max-width: 900px){
-  .about-grid{ grid-template-columns: 1fr; gap: 26px; }
+  .about-grid{ grid-template-columns: 1fr; }
 }
 
-/* Left side: grey curved shapes + logo circle */
 .about-left{
   position: relative;
   min-height: 420px;
@@ -190,8 +227,6 @@ header{
   height: 120%;
   background: var(--light-grey);
   border-radius: 60%;
-  transform: rotate(-8deg);
-  opacity: .85;
 }
 
 .logo-ring{
@@ -201,7 +236,7 @@ header{
   width: min(360px, 80vw);
   aspect-ratio: 1 / 1;
   border-radius: 999px;
-  background: var(--white);
+  background: #ffffff;
   display:grid;
   place-items:center;
   box-shadow: var(--shadow);
@@ -214,18 +249,13 @@ header{
   background: var(--navy);
   display:grid;
   place-items:center;
-  border: 6px solid rgba(255,255,255,.9);
-  overflow:hidden;
+  border: 6px solid #ffffff;
 }
 
 .logo-ring-inner img{
   width: 78%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.15));
 }
 
-/* Right side text */
 .about-right h3{
   font-size: clamp(32px, 3.5vw, 50px);
   margin: 0 0 10px 0;
@@ -234,100 +264,184 @@ header{
 
 .about-right p{
   margin: 0 0 34px 0;
-  color: rgba(255,255,255,.82);
   font-size: 20px;
-  max-width: 44ch;
+  color: rgba(255,255,255,.85);
 }
 
-/* ---------------- COMMITTEE CARDS ---------------- */
+/* =========================================================
+   COMMITTEE CARDS
+   ========================================================= */
+
 .cards{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 18px;
 }
 
 @media (max-width: 900px){
-  .cards{ grid-template-columns: repeat(2, 1fr); }
+  .cards{ grid-template-columns: repeat(2,1fr); }
 }
+
 @media (max-width: 600px){
   .cards{ grid-template-columns: 1fr; }
 }
 
 .card{
+  background:#ffffff;
   border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow);
   overflow:hidden;
-  border: 1px solid #eee;
+  box-shadow: var(--shadow);
+  border:1px solid #eee;
 }
 
 .card img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display:block;
+  width:100%;
+  height:220px;
+  object-fit:cover;
 }
 
-.card-body{ padding: 16px; }
-.card h4{ margin:0 0 6px 0; font-size:18px; color: var(--navy); }
-.card .role{ margin:0 0 10px 0; color:#506075; font-weight:700; font-size:14px; }
-.card .bio{ margin:0; color:#2e3a49; font-size:14px; }
+.card-body{
+  padding:16px;
+}
 
-/* ---------------- EVENTS TIMELINE ---------------- */
+.card h4{
+  margin:0 0 6px 0;
+  font-size:18px;
+  color:var(--navy);
+}
+
+.card .role{
+  margin:0 0 10px 0;
+  font-weight:700;
+  font-size:14px;
+  color:#506075;
+}
+
+.card .bio{
+  font-size:14px;
+  color:#2e3a49;
+}
+
+/* =========================================================
+   EVENTS TIMELINE
+   ========================================================= */
+
 .timeline{
-  position: relative;
-  margin-top: 18px;
-  padding-left: 22px;
+  position:relative;
+  padding-left:22px;
 }
 
 .timeline::before{
   content:"";
   position:absolute;
-  left: 7px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #d7dde5;
+  left:7px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:#d7dde5;
 }
 
 .t-item{
-  position: relative;
-  margin: 0 0 18px 0;
-  padding: 14px 14px 14px 14px;
-  border-radius: 14px;
-  border: 1px solid #eee;
+  position:relative;
+  margin-bottom:18px;
+  padding:14px;
+  background:#ffffff;
+  border-radius:14px;
+  border:1px solid #eee;
   box-shadow: var(--shadow);
-  background: var(--white);
 }
 
 .t-item::before{
   content:"";
   position:absolute;
-  left: -22px;
-  top: 18px;
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  background: var(--navy);
-  border: 3px solid var(--white);
-  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  left:-22px;
+  top:18px;
+  width:14px;
+  height:14px;
+  border-radius:999px;
+  background:var(--navy);
+  border:3px solid #ffffff;
 }
 
 .t-date{
-  font-weight: 900;
-  color: var(--navy);
-  margin: 0 0 6px 0;
+  font-weight:900;
+  color:var(--navy);
 }
+
 .t-title{
-  margin: 0 0 6px 0;
-  font-weight: 800;
+  font-weight:800;
 }
+
 .t-desc{
-  margin: 0;
   color:#344255;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* =========================================================
+   COMING SOON CARDS
+   ========================================================= */
+
+.soon-card{
+  max-width:760px;
+  margin:0 auto;
+  padding:28px;
+  background:#ffffff;
+  border-radius:18px;
+  border:1px solid #eee;
+  box-shadow: var(--shadow);
+}
+
+.soon-kicker{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--navy);
+}
+
+.soon-title{
+  font-size:clamp(34px,4vw,44px);
+  margin:0 0 10px 0;
+  font-weight:900;
+  color:var(--navy);
+}
+
+.soon-text{
+  color:#3b4757;
+  margin-bottom:18px;
+}
+
+.soon-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.soon-note{
+  font-size:13px;
+  color:#5b6778;
+}
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-wrap{
+  max-width:720px;
+  margin:0 auto;
+}
+
+.contact-form{
+  background:#ffffff;
+  border-radius:18px;
+  padding:22px;
+  border:1px solid #eee;
+  box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 footer{
   background: var(--navy);
   color: var(--text-grey);
@@ -338,160 +452,25 @@ footer{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap: 14px;
-  flex-wrap: wrap;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
-.footer-inner img{ height: 36px; width:auto; }
+.footer-inner img{
+  height:36px;
+}
 
-/* ---------------- FADE-IN ANIMATIONS (Oxford vibe) ---------------- */
+/* =========================================================
+   FADE-IN ANIMATIONS
+   ========================================================= */
+
 .reveal{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .65s ease, transform .65s ease;
-  will-change: opacity, transform;
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .65s ease, transform .65s ease;
 }
 
 .reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
+  opacity:1;
+  transform:none;
 }
-/* ---------- CONTACT PAGE (Oxford-like form) ---------- */
-body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-
-.contact-wrap{
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.contact-title{
-  margin: 0 0 18px 0;
-  font-size: clamp(34px, 4vw, 44px);
-  color: var(--navy);
-  letter-spacing: -0.02em;
-  font-weight: 900;
-}
-
-.contact-form{
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.form-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-@media (max-width: 680px){
-  .form-grid{ grid-template-columns: 1fr; }
-}
-
-.field{ display:flex; flex-direction:column; gap: 7px; }
-.field.full{ grid-column: 1 / -1; }
-
-label{
-  font-size: 14px;
-  font-weight: 700;
-  color: #1c2d47;
-}
-
-label span{
-  color: #1c2d47;
-  margin-left: 2px;
-}
-
-input, textarea{
-  width: 100%;
-  padding: 12px 12px;
-  border-radius: 12px;
-  border: 1px solid #dfe6ef;
-  outline: none;
-  font-size: 15px;
-  background: #fff;
-  color: #152338;
-}
-
-input:focus, textarea:focus{
-  border-color: rgba(22,54,93,.55);
-  box-shadow: 0 0 0 4px rgba(22,54,93,.12);
-}
-
-.submit-btn{
-  margin-top: 14px;
-  background: var(--navy);
-  color: #fff;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.submit-btn:hover{ opacity: .92; }
-
-.form-note{
-  margin: 10px 0 0 0;
-  color: #506075;
-  font-size: 13px;
-}
-  /* ---------- COMING SOON CARD ---------- */
-.soon-card{
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 28px;
-  border-radius: 18px;
-  background: #fff;
-  border: 1px solid #eee;
-  box-shadow: var(--shadow);
-}
-
-.soon-kicker{
-  margin: 0 0 8px 0;
-  color: var(--navy);
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.soon-title{
-  margin: 0 0 10px 0;
-  font-size: clamp(34px, 4vw, 44px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: var(--navy);
-  font-weight: 900;
-}
-
-.soon-text{
-  margin: 0 0 18px 0;
-  color: #3b4757;
-  font-size: 16px;
-  max-width: 65ch;
-}
-
-.soon-actions{
-  display:flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-
-.button-secondary{
-  background: #fff;
-  color: var(--navy);
-  border: 1px solid #dfe6ef;
-}
-
-.soon-note{
-  margin: 0;
-  color: #5b6778;
-  font-size: 13px;
-}
-
-/* Honeypot hidden field */
-.honeypot{ display:none; }

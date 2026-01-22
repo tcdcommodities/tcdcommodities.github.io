@@ -427,6 +427,60 @@ input:focus, textarea:focus{
   color: #506075;
   font-size: 13px;
 }
+  /* ---------- COMING SOON CARD ---------- */
+.soon-card{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: var(--shadow);
+}
+
+.soon-kicker{
+  margin: 0 0 8px 0;
+  color: var(--navy);
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.soon-title{
+  margin: 0 0 10px 0;
+  font-size: clamp(34px, 4vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.soon-text{
+  margin: 0 0 18px 0;
+  color: #3b4757;
+  font-size: 16px;
+  max-width: 65ch;
+}
+
+.soon-actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.button-secondary{
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid #dfe6ef;
+}
+
+.soon-note{
+  margin: 0;
+  color: #5b6778;
+  font-size: 13px;
+}
 
 /* Honeypot hidden field */
 .honeypot{ display:none; }

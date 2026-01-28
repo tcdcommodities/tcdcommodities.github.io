@@ -557,3 +557,43 @@ footer{
   border:1px solid #eee;
   box-shadow: var(--shadow);
 }
+/* =========================
+   MOBILE FIX: ABOUT SECTION TEXT VISIBILITY
+   ========================= */
+@media (max-width: 900px){
+
+  /* Give the whole About section more vertical space */
+  .about-poster{
+    padding-bottom: 60px;
+  }
+
+  /* Push the grid down so text sits fully on navy */
+  .about-grid{
+    padding-top: 40px;
+  }
+
+  /* Reduce overlap from logo area */
+  .about-left{
+    min-height: 260px;
+  }
+
+  /* Move logo up slightly so text clears it */
+  .logo-ring{
+    margin-bottom: 24px;
+  }
+
+  /* Push mission/vision text DOWN */
+  .about-right{
+    margin-top: 20px;
+  }
+
+  .about-right h3{
+    margin-top: 24px;
+  }
+
+  /* Ensure text is readable */
+  .about-right p{
+    color: rgba(255,255,255,.9);
+    font-size: 16px;
+  }
+}

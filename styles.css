@@ -116,10 +116,23 @@ header{
   background-size: cover;
   background-position: center;
 }
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+.hero-inner{
+  position: relative;
+  z-index: 1;
+}
 
 .hero-inner{
   padding: 70px 0;
   color: var(--white);
+}
+.hero p{
+  text-shadow: 0 4px 12px rgba(0,0,0,0.45);
 }
 
 .hero h1{

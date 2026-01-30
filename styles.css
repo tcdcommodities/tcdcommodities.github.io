@@ -688,5 +688,10 @@ footer{
 /* Content spacing */
 .card-body{
   padding: 18px;
+  /* Force Head of Research to start a new row, left-aligned (desktop only) */
+@media (min-width: 901px){
+  .card--research{
+    grid-column: 1;
+  }
 }
 

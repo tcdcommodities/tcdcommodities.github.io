@@ -695,3 +695,9 @@ footer{
   }
 }
 
+/* Force Head of Research to left of second row on desktop */
+@media (min-width: 901px){
+  .card--research{
+    grid-column: 1;
+  }
+}

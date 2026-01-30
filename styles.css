@@ -284,18 +284,18 @@ header{
 }
 
 /* =========================
-   COMMITTEE CARDS
+   EXECUTIVE COMMITTEE GRID (RESET)
    ========================= */
 .cards{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
 /* Tablet */
 @media (max-width: 900px){
   .cards{
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -305,10 +305,7 @@ header{
     grid-template-columns: 1fr;
   }
 }
-/* Force Head of Research to left of second row (desktop only) */
-.card--research{
-  grid-column: 1;
-}
+
 /* =========================
    FOOTER
    ========================= */

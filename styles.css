@@ -287,54 +287,28 @@ header{
    COMMITTEE CARDS
    ========================= */
 .cards{
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
+/* Tablet */
 @media (max-width: 900px){
-  .cards{ grid-template-columns: repeat(2, 1fr); }
+  .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+/* Mobile */
 @media (max-width: 600px){
-  .cards{ grid-template-columns: 1fr; }
+  .cards{
+    grid-template-columns: 1fr;
+  }
 }
-
-.card{
-  border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow);
-  overflow:hidden;
-  border: 1px solid #eee;
+/* Force Head of Research to left of second row (desktop only) */
+.card--research{
+  grid-column: 1;
 }
-
-.card img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display:block;
-}
-
-.card-body{ padding: 16px; }
-
-.card h4{
-  margin:0 0 6px 0;
-  font-size:18px;
-  color: var(--navy);
-}
-
-.card .role{
-  margin:0 0 10px 0;
-  color:#506075;
-  font-weight:700;
-  font-size:14px;
-}
-
-.card .bio{
-  margin:0;
-  color:#2e3a49;
-  font-size:14px;
-}
-
 /* =========================
    FOOTER
    ========================= */

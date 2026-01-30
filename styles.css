@@ -284,18 +284,19 @@ header{
 }
 
 /* =========================
-   EXECUTIVE COMMITTEE GRID (RESET)
+   COMMITTEE CARDS — FINAL FIX
    ========================= */
+
 .cards{
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 /* Tablet */
 @media (max-width: 900px){
   .cards{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -305,6 +306,27 @@ header{
     grid-template-columns: 1fr;
   }
 }
+
+.card{
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+/* Image behaves normally again */
+.card img{
+  width: 100%;
+  height: auto;          /* 🔑 THIS FIXES THE STRETCHING */
+  display: block;
+}
+
+/* Content spacing */
+.card-body{
+  padding: 18px;
+}
+
 
 /* =========================
    FOOTER
@@ -505,13 +527,50 @@ footer{
     padding: 48px 0;
   }
 
-  .card img{
-    height: 180px;
-  }
+/* =========================
+   COMMITTEE CARDS — FINAL FIX
+   ========================= */
 
-  .card-body{
-    padding: 14px;
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Tablet */
+@media (max-width: 900px){
+  .cards{
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  .cards{
+    grid-template-columns: 1fr;
+  }
+}
+
+.card{
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+/* Image behaves normally again */
+.card img{
+  width: 100%;
+  height: auto;          /* 🔑 THIS FIXES THE STRETCHING */
+  display: block;
+}
+
+/* Content spacing */
+.card-body{
+  padding: 18px;
+}
+
 }
 @media (max-width: 600px){
   .soon-card{
@@ -588,9 +647,27 @@ footer{
   }
 }
 /* =========================
-   FORCE COMMITTEE POPUP CARDS
+   COMMITTEE CARDS — FINAL FIX
    ========================= */
 
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Tablet */
+@media (max-width: 900px){
+  .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  .cards{
+    grid-template-columns: 1fr;
+  }
 }
 
 .card{
@@ -601,25 +678,15 @@ footer{
   overflow: hidden;
 }
 
-.card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 38px rgba(0,0,0,.12);
-}
-
+/* Image behaves normally again */
 .card img{
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;          /* 🔑 THIS FIXES THE STRETCHING */
   display: block;
 }
 
+/* Content spacing */
 .card-body{
-  padding: 16px;
-  flex: 1;
+  padding: 18px;
 }
-.card img{
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
+

@@ -324,7 +324,7 @@ header{
   width: 100%;
   aspect-ratio: 1 / 1;   /* 🔥 Forces perfect square */
   object-fit: cover;     /* Crops cleanly */
-  object-position: center top; /* Focus on face */
+  object-position: center 30%; /* Focus on face */
   display: block;
   border-bottom: 1px solid #eee;
 }

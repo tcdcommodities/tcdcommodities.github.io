@@ -327,7 +327,9 @@ header{
   object-fit: cover;
   display: block;
 }
-
+.card img{
+  border-bottom: 1px solid #eee;
+}
 /* Content spacing */
 .card-body{
   padding: 18px;

@@ -287,16 +287,20 @@ header{
    COMMITTEE CARDS — FINAL FIX
    ========================= */
 
+/* =========================
+   COMMITTEE CARDS (CLEAN + UNIFORM)
+   ========================= */
+
 .cards{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
 /* Tablet */
 @media (max-width: 900px){
   .cards{
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -315,26 +319,19 @@ header{
   overflow: hidden;
 }
 
-/* Image behaves normally again */
+/* ONE definitive rule for all headshots */
 .card img{
   width: 100%;
-  height: auto;          /* 🔑 THIS FIXES THE STRETCHING */
+  height: 220px;        /* uniform height */
+  object-fit: cover;    /* clean crop, no distortion */
   display: block;
-}
-.card img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-.card img{
   border-bottom: 1px solid #eee;
 }
+
 /* Content spacing */
 .card-body{
   padding: 18px;
 }
-
 
 /* =========================
    FOOTER

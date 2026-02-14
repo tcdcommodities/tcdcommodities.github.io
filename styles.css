@@ -321,6 +321,12 @@ header{
   height: auto;          /* 🔑 THIS FIXES THE STRETCHING */
   display: block;
 }
+.card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
 
 /* Content spacing */
 .card-body{

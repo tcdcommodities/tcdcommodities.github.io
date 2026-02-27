@@ -707,3 +707,41 @@ footer{
     grid-column: 1;
   }
 }
+  /* =========================
+   RESEARCH SECTION
+   ========================= */
+
+.research-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+
+@media (max-width: 800px){
+  .research-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.research-card{
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #eee;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.research-card h3{
+  margin-bottom: 6px;
+}
+
+.research-meta{
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.research-desc{
+  margin-bottom: 16px;
+}

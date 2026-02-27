@@ -745,3 +745,15 @@ footer{
 .research-desc{
   margin-bottom: 16px;
 }
+/* Remove navbar bullets permanently */
+.nav-links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li{
+  list-style: none;
+}

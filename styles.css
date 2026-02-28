@@ -355,15 +355,6 @@ header{
   padding: 18px;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-footer{
-  background: var(--navy);
-  color: var(--text-grey);
-  padding: 26px 0;
-}
-
 .footer-inner{
   display:flex;
   align-items:center;
@@ -372,39 +363,42 @@ footer{
   flex-wrap: wrap;
 }
 
-.footer-inner img{
-  height: 36px;
-  width: auto;
-}
-/* =========================
-   FOOTER SOCIAL BUTTONS
-   ========================= */
-
 .footer-social{
-  display: flex;
+  display:flex;
   gap: 14px;
+  margin-left: auto;          /* pushes icons to the right on desktop */
+}
+
+/* When footer wraps (mobile), center everything */
+@media (max-width: 700px){
+  .footer-inner{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-social{
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .footer-social a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  display:flex;
+  align-items:center;
+  justify-content:center;
   width: 40px;
   height: 40px;
-
   border-radius: 50%;
   background: rgba(255,255,255,.1);
   color: #ffffff;
-
-  text-decoration: none;
+  text-decoration:none;
   font-size: 18px;
-
   transition: all .25s ease;
 }
 
 .footer-social a:hover{
-  background: #ffffff;
+  background:#ffffff;
   color: var(--navy);
   transform: translateY(-3px);
 }

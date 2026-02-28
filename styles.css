@@ -355,32 +355,37 @@ header{
   padding: 18px;
 }
 
+/* =========================
+   FOOTER (FINAL, FIXED)
+   ========================= */
+
+footer{
+  background: var(--navy);
+  color: var(--text-grey);
+  padding: 26px 0;
+}
+
 .footer-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 14px;
-  flex-wrap: wrap;
 }
 
+/* LOCK the logo size forever */
+.footer-inner img{
+  height: 36px !important;
+  width: auto !important;
+  max-height: 36px !important;
+  flex: 0 0 auto;
+}
+
+/* Social buttons sit right on desktop */
 .footer-social{
-  display:flex;
+  display: flex;
+  align-items: center;
   gap: 14px;
-  margin-left: auto;          /* pushes icons to the right on desktop */
-}
-
-/* When footer wraps (mobile), center everything */
-@media (max-width: 700px){
-  .footer-inner{
-    justify-content: center;
-    text-align: center;
-  }
-
-  .footer-social{
-    margin-left: 0;
-    justify-content: center;
-    width: 100%;
-  }
+  flex: 0 0 auto;
 }
 
 .footer-social a{
@@ -389,11 +394,12 @@ header{
   justify-content:center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 999px;
   background: rgba(255,255,255,.1);
   color: #ffffff;
   text-decoration:none;
   font-size: 18px;
+  line-height: 1;
   transition: all .25s ease;
 }
 
@@ -401,6 +407,20 @@ header{
   background:#ffffff;
   color: var(--navy);
   transform: translateY(-3px);
+}
+
+/* Mobile: stack neatly without blowing up the logo */
+@media (max-width: 700px){
+  .footer-inner{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-social{
+    justify-content: center;
+  }
 }
 
 /* =========================

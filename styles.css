@@ -149,8 +149,9 @@ header{
 }
 
 .hero-inner{
-  padding: 70px 0;
+  padding: 70px 0 70px 80px;  /* top right bottom left */
   color: var(--white);
+}
 }
 .hero p{
   text-shadow: 0 4px 12px rgba(0,0,0,0.45);
@@ -707,7 +708,8 @@ footer{
 }
 @media (max-width: 768px){
   .hero-inner{
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 56px 20px; /* top/bottom, left/right */
+  }
+}
   }
 }

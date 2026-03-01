@@ -702,3 +702,12 @@ footer{
 .hero-card p{
   color: #ffffff;
 }
+.hero-inner{
+  padding-left: 80px;   /* shifts card right */
+}
+@media (max-width: 768px){
+  .hero-inner{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

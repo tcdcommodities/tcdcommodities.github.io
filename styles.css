@@ -682,3 +682,23 @@ footer{
   display: block;
   width: 100%;
 }
+/* =========================
+   HERO PREMIUM GLASS PANEL
+   ========================= */
+
+.hero-card{
+  background: rgba(22, 54, 93, 0.72);   /* premium navy glass */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  padding: 36px;
+  border-radius: 20px;
+  max-width: 680px;
+
+  box-shadow: 0 25px 70px rgba(0,0,0,.35);
+}
+
+.hero-card h1,
+.hero-card p{
+  color: #ffffff;
+}

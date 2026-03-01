@@ -677,3 +677,8 @@ footer{
   padding: 0;
 }ding: 0 !important;
 }
+/* Ensure footer never disappears */
+footer{
+  display: block;
+  width: 100%;
+}

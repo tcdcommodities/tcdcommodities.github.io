@@ -534,6 +534,9 @@ footer{
 
 .honeypot{ display:none; }
 
+/* =========================
+   RESPONSIVE NAV
+   ========================= */
 @media (max-width: 768px){
   .nav{
     flex-wrap: wrap;
@@ -556,231 +559,85 @@ footer{
     gap: 14px;
   }
 }
-@media (max-width: 768px){
-  .hero{
-    min-height: 52vh;
-  }
-
-  .hero-inner{
-    padding: 56px 0;
-  }
-
-  .hero h1{
-    font-size: 32px;
-    max-width: 100%;
-  }
-
-  .hero p{
-    font-size: 15px;
-  }
-}
-@media (max-width: 900px){
-  .about-grid{
-    padding: 24px 0 56px 0;
-  }
-
-  .about-left{
-    min-height: 300px;
-  }
-
-  .logo-ring{
-    position: relative;
-    left: 0;
-    bottom: 0;
-    margin: 0 auto;
-  }
-
-  .about-right h3{
-    font-size: 28px;
-  }
-
-  .about-right p{
-    font-size: 16px;
-  }
-}
-@media (max-width: 600px){
-  .section{
-    padding: 48px 0;
-  }
 
 /* =========================
-   COMMITTEE CARDS — FINAL FIX
+   RESPONSIVE HERO
    ========================= */
-
-.cards{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+@media (max-width: 768px){
+  .hero{ min-height: 52vh; }
+  .hero-inner{ padding: 56px 0; }
+  .hero h1{ font-size: 32px; max-width: 100%; }
+  .hero p{ font-size: 15px; }
 }
 
-/* Tablet */
+/* =========================
+   RESPONSIVE ABOUT
+   ========================= */
 @media (max-width: 900px){
-  .cards{
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .about-grid{ grid-template-columns: 1fr; gap: 26px; padding: 24px 0 56px 0; }
+  .about-left{ min-height: 300px; }
+  .logo-ring{ position: relative; left: 0; bottom: 0; margin: 0 auto; }
+  .about-right h3{ font-size: 28px; }
+  .about-right p{ font-size: 16px; }
 }
 
-/* Mobile */
+/* Mobile breathing room */
 @media (max-width: 600px){
-  .cards{
-    grid-template-columns: 1fr;
-  }
+  .section{ padding: 48px 0; }
 }
 
-.card{
+/* =========================
+   SOON CARD (Coming Soon pages)
+   ========================= */
+.soon-card{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px;
   background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
   border: 1px solid #eee;
-  overflow: hidden;
-}
-
-/* Image behaves normally again */
-.card img{
-  width: 100%;
-  height: auto;          /* 🔑 THIS FIXES THE STRETCHING */
-  display: block;
-}
-
-/* Content spacing */
-.card-body{
-  padding: 18px;
-}
-
-}
-@media (max-width: 600px){
-  .soon-card{
-    padding: 20px;
-  }
-
-  .soon-title{
-    font-size: 30px;
-  }
-}
-@media (max-width: 600px){
-  .contact-form{
-    padding: 18px;
-  }
-
-  .contact-form input,
-  .contact-form textarea{
-    font-size: 14px;
-  }
-}
-.soon-card{
-  max-width:760px;
-  margin:0 auto;
-  padding:28px;
-  background:#ffffff;
-  border-radius:18px;
-  border:1px solid #eee;
   box-shadow: var(--shadow);
 }
-/* =========================
-   MOBILE FIX: FORCE ABOUT TEXT DOWN
-   ========================= */
-@media (max-width: 900px){
 
-  /* Give the whole section more height */
-  .about-poster{
-    padding-bottom: 100px;
-  }
-
-  /* Stack layout with more breathing room */
-  .about-grid{
-    padding-top: 60px;
-    row-gap: 40px;
-  }
-
-  /* Shrink the logo area so it doesn't overlap text */
-  .about-left{
-    min-height: 220px;
-  }
-
-  /* Center logo and keep it higher */
-  .logo-ring{
-    position: relative;
-    left: 0;
-    bottom: 0;
-    margin: 0 auto 40px auto;
-  }
-
-  /* 🔑 THIS IS THE KEY PART 🔑
-     Push the text block DOWN explicitly */
-  .about-right{
-    margin-top: 60px;
-  }
-
-  /* Extra safety: push headings further */
-  .about-right h3{
-    margin-top: 32px;
-  }
-
-  /* Ensure text contrast */
-  .about-right p{
-    color: rgba(255,255,255,.92);
-    font-size: 16px;
-  }
+@media (max-width: 600px){
+  .soon-card{ padding: 20px; }
+  .soon-title{ font-size: 30px; }
 }
-/* =========================
-   COMMITTEE CARDS — FINAL FIX
-   ========================= */
 
+/* =========================
+   CONTACT FORM (mobile tweak)
+   ========================= */
+@media (max-width: 600px){
+  .contact-form{ padding: 18px; }
+  .contact-form input,
+  .contact-form textarea{ font-size: 14px; }
+}
+
+/* =========================
+   COMMITTEE GRID (single source of truth)
+   ========================= */
 .cards{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
-/* Tablet */
 @media (max-width: 900px){
-  .cards{
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .cards{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* Mobile */
 @media (max-width: 600px){
-  .cards{
-    grid-template-columns: 1fr;
-  }
+  .cards{ grid-template-columns: 1fr; }
 }
 
-.card{
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
-  border: 1px solid #eee;
-  overflow: hidden;
-}
-
-/* Image behaves normally again */
-.card img{
-  width: 100%;
-  height: auto;          /* 🔑 THIS FIXES THE STRETCHING */
-  display: block;
-}
-
-/* Content spacing */
-.card-body{
-  padding: 18px;
-  /* Force Head of Research to start a new row, left-aligned (desktop only) */
+/* Force Head of Research to start row 2, column 1 on desktop */
 @media (min-width: 901px){
-  .card--research{
-    grid-column: 1;
-  }
+  .card--research{ grid-column: 1; }
 }
 
-/* Force Head of Research to left of second row on desktop */
-@media (min-width: 901px){
-  .card--research{
-    grid-column: 1;
-  }
-}
-  /* =========================
-   RESEARCH SECTION
+/* =========================
+   RESEARCH GRID (if used later)
    ========================= */
-
 .research-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -789,9 +646,7 @@ footer{
 }
 
 @media (max-width: 800px){
-  .research-grid{
-    grid-template-columns: 1fr;
-  }
+  .research-grid{ grid-template-columns: 1fr; }
 }
 
 .research-card{
@@ -802,9 +657,7 @@ footer{
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
 
-.research-card h3{
-  margin-bottom: 6px;
-}
+.research-card h3{ margin-bottom: 6px; }
 
 .research-meta{
   font-size: 14px;
@@ -812,17 +665,15 @@ footer{
   margin-bottom: 12px;
 }
 
-.research-desc{
-  margin-bottom: 16px;
-/* =========================
-   FORCE REMOVE NAV BULLETS
-   ========================= */
+.research-desc{ margin-bottom: 16px; }
 
-header ul,
-header ul li,
+/* =========================
+   NAV BULLETS (global kill switch)
+   ========================= */
 .nav-links,
-.nav-links li {
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+.nav-links li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}ding: 0 !important;
 }

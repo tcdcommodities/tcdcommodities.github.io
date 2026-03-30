@@ -737,45 +737,77 @@ footer {
   line-height: 1.7;
 }
 
-/* SPEAKER CARDS */
-.speaker-card {
-  max-width: 360px;
+/* SPEAKER ROWS (landscape cards) */
+.speaker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.speaker-img-wrap {
-  position: relative;
+.speaker-row {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  background: #ffffff;
+  border-radius: var(--radius);
+  border: 1px solid #eee;
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.speaker-img-wrap img {
+.speaker-row-img {
+  flex-shrink: 0;
+}
+
+.speaker-row-img img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 15%;
   display: block;
-  border-bottom: 1px solid #eee;
 }
 
-.speaker-tag {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: var(--gold);
-  color: #fff;
-  font-size: 10px;
+.speaker-row-body {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.speaker-name {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
+  color: var(--navy);
+  margin: 6px 0 6px 0;
+  letter-spacing: -0.01em;
 }
 
 .speaker-date {
   font-size: 12px;
   color: #7a8fa6;
-  margin: 0 0 8px 0;
+  margin: 0 0 4px 0;
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.speaker-row-body .bio {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+@media (max-width: 700px) {
+  .speaker-row {
+    grid-template-columns: 1fr;
+  }
+  .speaker-row-img img {
+    height: 280px;
+  }
+  .speaker-row-body {
+    padding: 24px 20px;
+  }
 }
 
 /* RESPONSIVE */

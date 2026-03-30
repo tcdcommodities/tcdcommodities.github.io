@@ -737,25 +737,20 @@ footer {
   line-height: 1.7;
 }
 
-/* SPEAKER ROWS (landscape cards) */
+/* SPEAKER ROWS (Oxford-style landscape) */
 .speaker-list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
 .speaker-row {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  background: #ffffff;
-  border-radius: var(--radius);
-  border: 1px solid #eee;
-  box-shadow: var(--shadow);
+  grid-template-columns: 42% 1fr;
+  min-height: 460px;
+  border-radius: 6px;
   overflow: hidden;
-}
-
-.speaker-row-img {
-  flex-shrink: 0;
+  box-shadow: 0 20px 60px rgba(0,0,0,.14);
 }
 
 .speaker-row-img img {
@@ -767,46 +762,56 @@ footer {
 }
 
 .speaker-row-body {
-  padding: 36px 40px;
+  background: var(--navy);
+  padding: 56px 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.speaker-date {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  color: rgba(255,255,255,0.70);
+  margin: 0 0 10px 0;
+}
+
 .speaker-name {
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 32px;
+  font-size: clamp(40px, 4.5vw, 58px);
   font-weight: 700;
-  color: var(--navy);
-  margin: 6px 0 6px 0;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  line-height: 1.05;
   letter-spacing: -0.01em;
 }
 
-.speaker-date {
-  font-size: 12px;
-  color: #7a8fa6;
-  margin: 0 0 4px 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.speaker-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 24px 0;
+  line-height: 1.4;
 }
 
-.speaker-row-body .bio {
-  margin-top: 12px;
+.speaker-bio {
   font-size: 15px;
-  line-height: 1.7;
-  max-width: 60ch;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  max-width: 52ch;
+  margin: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .speaker-row {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
   .speaker-row-img img {
-    height: 280px;
+    height: 320px;
   }
   .speaker-row-body {
-    padding: 24px 20px;
+    padding: 32px 28px;
   }
 }
 

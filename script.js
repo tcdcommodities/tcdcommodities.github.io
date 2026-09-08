@@ -1,3 +1,6 @@
+// Mark JS as available — reveal hiding only applies with this class present
+document.documentElement.classList.add('js');
+
 // Reveal on scroll
 const revealEls = document.querySelectorAll(“.reveal”);
 

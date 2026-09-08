@@ -798,19 +798,21 @@ footer {
 }
 
 .speaker-row-body {
-  background: var(--navy);
+  background: var(--navy-mid);
   padding: 60px 56px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 0;
 }
 
 .speaker-date {
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 19px;
+  font-size: 17px;
   font-style: italic;
-  color: rgba(255,255,255,0.65);
-  margin: 0 0 10px 0;
+  color: var(--gold);
+  margin: 0 0 14px 0;
+  letter-spacing: 0.01em;
 }
 
 .speaker-name {
@@ -818,25 +820,28 @@ footer {
   font-size: clamp(48px, 5vw, 72px);
   font-weight: 400;
   color: #ffffff;
-  margin: 0 0 16px 0;
+  margin: 0 0 10px 0;
   line-height: 0.95;
   letter-spacing: -0.02em;
 }
 
 .speaker-title {
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 21px;
-  color: rgba(255,255,255,0.80);
-  margin: 0 0 24px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.90);
+  margin: 0 0 28px 0;
   line-height: 1.4;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .speaker-bio {
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: 17px;
-  color: rgba(255,255,255,0.58);
-  line-height: 1.85;
-  max-width: 50ch;
+  font-size: 19px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.9;
+  max-width: 52ch;
   margin: 0;
 }
 
@@ -927,7 +932,7 @@ footer {
     min-height: auto;
   }
   .speaker-row-img img { height: 340px; }
-  .speaker-row-body { padding: 36px 28px; }
+  .speaker-row-body { padding: 40px 32px; }
 }
 
 @media (max-width: 768px) {

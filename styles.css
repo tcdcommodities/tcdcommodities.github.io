@@ -414,6 +414,18 @@ header {
 
 .card-body { padding: 20px 20px 22px; }
 
+.card-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 4px 0;
+}
+
+.card-name-row h4 {
+  margin: 0;
+}
+
 .card-body h4 {
   font-family: 'EB Garamond', Georgia, serif;
   font-size: 22px;
@@ -421,6 +433,27 @@ header {
   color: var(--navy);
   margin: 0 0 4px 0;
   letter-spacing: -0.01em;
+}
+
+.card-linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--navy);
+  border: 1px solid #d0d8e4;
+  border-radius: 4px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.card-linkedin:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
 }
 
 .role {

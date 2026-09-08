@@ -1,4 +1,4 @@
-// Simple “fade-in on scroll” like Oxford-style sections
+// Reveal on scroll
 const revealEls = document.querySelectorAll(“.reveal”);
 
 const io = new IntersectionObserver((entries) => {
@@ -8,9 +8,14 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0 });
 
 revealEls.forEach(el => io.observe(el));
+
+// Fallback: show everything after 1.5s in case the observer doesn't fire
+setTimeout(() => {
+  revealEls.forEach(el => el.classList.add(“is-visible”));
+}, 1500);
 
 // Image carousel
 document.querySelectorAll('[data-carousel]').forEach(carousel => {

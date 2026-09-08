@@ -20,6 +20,20 @@ setTimeout(() => {
   revealEls.forEach(el => el.classList.add(“is-visible”));
 }, 1500);
 
+// About section background slideshow (auto-advances every 5s)
+const aboutBg = document.querySelector('[data-about-carousel]');
+if (aboutBg) {
+  const slides = aboutBg.querySelectorAll('.about-bg-slide');
+  let cur = 0;
+  if (slides.length > 1) {
+    setInterval(() => {
+      slides[cur].classList.remove('active');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('active');
+    }, 5000);
+  }
+}
+
 // Image carousel
 document.querySelectorAll('[data-carousel]').forEach(carousel => {
   const track = carousel.querySelector('.carousel-track');

@@ -298,9 +298,45 @@ header {
 
 /* ─── ABOUT POSTER ────────────────────────────────── */
 .about-poster {
+  position: relative;
   background: var(--navy);
   color: var(--white);
   overflow: hidden;
+}
+
+.about-bg-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+.about-bg-slide.active { opacity: 1; }
+
+.about-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(8, 20, 40, 0.90) 0%,
+    rgba(10, 22, 44, 0.78) 55%,
+    rgba(10, 22, 44, 0.58) 100%
+  );
+}
+
+.about-top,
+.about-grid {
+  position: relative;
+  z-index: 2;
 }
 
 .about-top { padding-top: 70px; }

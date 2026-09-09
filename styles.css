@@ -531,6 +531,10 @@ header {
 .cards .card:nth-child(3) { transition-delay: 160ms; }
 .cards .card:nth-child(4) { transition-delay: 240ms; }
 .cards .card:nth-child(5) { transition-delay: 320ms; }
+.cards .card:nth-child(6) { transition-delay: 400ms; }
+.cards .card:nth-child(7) { transition-delay: 480ms; }
+.cards .card:nth-child(8) { transition-delay: 560ms; }
+.cards .card:nth-child(9) { transition-delay: 640ms; }
 
 /* ─── FOOTER ──────────────────────────────────────── */
 footer {
